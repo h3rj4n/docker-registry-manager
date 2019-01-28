@@ -2,7 +2,7 @@
 FROM arm64v8/golang:alpine as build-env
 
 # Install git and the bee tool used for deployment
-RUN apk add --no-cache git
+RUN apk add --no-cache git gcc musl-dev
 
 # Copy the local package files to the container's workspace.
 ADD . /go/src/github.com/snagles/docker-registry-manager
